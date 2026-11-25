@@ -64,3 +64,4 @@ This starter uses a local SQLite file (`crn.db`). It is suitable for local devel
 Included: resource registration, storage, viewing, and deletion.
 
 Not included yet: automatic resource matching, distance calculations, heat-cascade analysis, AI, optimization, or financial feasibility calculations.
+
