@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Share resources, reduce waste | CRN, Circular Resource Network</title>
+  <meta name="description" content="CRN is a registry where facilities list the heat, water, brine and materials they can share, and the resources they need.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%99%BB%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/landing.css">
+</head>
+<body data-page="index">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title">One facility’s waste is another facility’s resource.</h1>
+          <p class="hero-lead">CRN is a registry where industries list the heat, water, brine and materials they have to spare, alongside the facilities that need them. Phase 1 puts that information in one place.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light btn-lg" href="dashboard.html">Get started</a>
+            <a class="btn btn-ghost-light btn-lg" href="#how-it-works">See how it works</a>
+          </div>
+          <p class="hero-note">Phase 1 covers registration and records. Matching arrives in Phase 2.</p>
+        </div>
+        <figure class="loop">
+          <div class="loop-stage" role="img" aria-label="Diagram of four facilities in a loop: a data center sends waste heat to a greenhouse, a desalination plant sends brine to a salt works.">
+            <svg class="loop-ring" viewBox="0 0 400 400" aria-hidden="true">
+              <circle class="ring-base" cx="200" cy="200" r="150"/>
+              <circle class="ring-flow" cx="200" cy="200" r="150" pathLength="100"/>
+            </svg>
+            <div class="loop-core"><span data-icon="leaf" data-size="34"></span></div>
+            <div class="loop-node n1 tone-heat"><span data-icon="flame" data-size="24"></span><span>Data center<small>Has waste heat</small></span></div>
+            <div class="loop-node n2 tone-organic"><span data-icon="sprout" data-size="24"></span><span>Greenhouse<small>Needs heat</small></span></div>
+            <div class="loop-node n3 tone-brine"><span data-icon="flask" data-size="24"></span><span>Desalination plant<small>Has brine</small></span></div>
+            <div class="loop-node n4 tone-wastewater"><span data-icon="building" data-size="24"></span><span>Salt works<small>Needs brine</small></span></div>
+          </div>
+          <figcaption>Illustrative example, not real data.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="concept-title">
+      <div class="container split">
+        <div>
+          <h2 id="concept-title">Why a shared registry</h2>
+          <p class="lead">Many resources are thrown away on one side of a fence while the other side pays for the same thing. The gap is usually missing information, not missing technology.</p>
+        </div>
+        <dl class="concept-list">
+          <div><dt>Surplus on one side</dt><dd>A data center vents warm air, a desalination plant discharges brine, a factory pays to dispose of offcuts.</dd></div>
+          <div><dt>Demand on the other</dt><dd>A greenhouse buys fuel for heat, a salt works needs brine, a recycler looks for feedstock.</dd></div>
+          <div><dt>What CRN adds</dt><dd>One place to record both sides, so a connection can be found instead of guessed.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section band" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head"><h2 id="how-title">How it works</h2><p class="lead">Three steps, from a facility’s first record to the data that matching will use.</p></div>
+        <ol class="steps">
+          <li><h3>Register sources</h3><p>Record waste heat, water, brine or reusable materials a facility can offer.</p></li>
+          <li><h3>Register demand</h3><p>Record the facilities that need a particular resource, and how much.</p></li>
+          <li><h3>Prepare for matching <span class="tag">Phase 2</span></h3><p>Sources and consumers will be compared for compatibility in the next phase.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cat-title">
+      <div class="container">
+        <div class="section-head"><h2 id="cat-title">Resource categories</h2><p class="lead">Eight categories cover what facilities can offer or need today.</p></div>
+        <ul class="category-list" id="category-list"></ul>
+      </div>
+    </section>
+
+    <section class="section band" id="roadmap" aria-labelledby="road-title">
+      <div class="container">
+        <div class="section-head"><h2 id="road-title">Roadmap</h2><p class="lead">Phase 1 is what you can use now. Phase 2 is planned and not available yet.</p></div>
+        <div class="roadmap">
+          <article class="phase phase-now">
+            <span class="tag">Available now</span>
+            <h3>Phase 1: Resource registration</h3>
+            <ul>
+              <li><span data-icon="check" data-size="18"></span>Register resource sources</li>
+              <li><span data-icon="check" data-size="18"></span>Register resource consumers</li>
+              <li><span data-icon="check" data-size="18"></span>View saved records</li>
+              <li><span data-icon="check" data-size="18"></span>Delete records with confirmation</li>
+            </ul>
+          </article>
+          <article class="phase phase-next">
+            <span class="tag">Planned</span>
+            <h3>Phase 2: Matching and analysis</h3>
+            <ul>
+              <li><span data-icon="target" data-size="18"></span>Automatic source-to-consumer matching</li>
+              <li><span data-icon="pin" data-size="18"></span>Distance calculations</li>
+              <li><span data-icon="route" data-size="18"></span>Heat-cascade analysis</li>
+              <li><span data-icon="chart" data-size="18"></span>Optimization and financial feasibility</li>
+              <li><span data-icon="zap" data-size="18"></span>AI-assisted suggestions</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <div><h2 id="cta-title">Record what your facility can share, or what it needs.</h2><p>Start on the dashboard and add your first resource.</p></div>
+        <a class="btn btn-light btn-lg" href="dashboard.html">Get started</a>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script type="module" src="js/pages/landing.js"></script>
+</body>
+</html>
