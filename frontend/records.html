@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Records | CRN, Circular Resource Network</title>
+  <meta name="description" content="Browse, search, filter and delete registered resource sources and consumers.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%99%BB%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/records.css">
+</head>
+<body data-page="records">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <header class="page-header">
+      <div class="container">
+        <h1>Records</h1>
+        <p class="lead">Everything registered so far. Search and filters only change what is shown on this page.</p>
+        <div class="page-actions">
+          <a class="btn btn-primary" href="add-source.html"><span data-icon="plus" data-size="18"></span>Add source</a>
+          <a class="btn btn-accent" href="add-consumer.html"><span data-icon="plus" data-size="18"></span>Add consumer</a>
+        </div>
+      </div>
+    </header>
+    <div class="container records">
+      <div class="alert alert-warning"><span data-icon="alert" data-size="20"></span><div class="alert-body"><p>Deleting a record is permanent for this database. You will be asked to confirm each time.</p></div></div>
+      <div class="tabs" role="tablist" aria-label="Record type">
+        <button class="tab" role="tab" id="tab-source" aria-controls="records-panel" aria-selected="true" data-kind="source" type="button">Sources <span class="tab-count" id="count-source">–</span></button>
+        <button class="tab" role="tab" id="tab-consumer" aria-controls="records-panel" aria-selected="false" tabindex="-1" data-kind="consumer" type="button">Consumers <span class="tab-count" id="count-consumer">–</span></button>
+      </div>
+      <div id="records-panel" role="tabpanel" aria-labelledby="tab-source">
+        <div class="toolbar" role="search">
+          <div class="field search-wrap-field">
+            <label for="search">Search</label>
+            <div class="search-wrap"><span data-icon="search" data-size="18"></span><input id="search" type="search" placeholder="Name, location, type or description" autocomplete="off"></div>
+          </div>
+          <div class="field"><label for="filter-resource">Resource</label><select id="filter-resource"><option value="">All resources</option></select></div>
+          <div class="field"><label for="filter-facility">Facility type</label><select id="filter-facility"><option value="">All facility types</option></select></div>
+          <button class="btn btn-outline" type="button" id="clear-filters">Clear filters</button>
+        </div>
+        <p class="results-count" id="results-count" aria-live="polite"></p>
+        <div id="table-host" aria-live="polite"></div>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script type="module" src="js/pages/records.js"></script>
+</body>
+</html>

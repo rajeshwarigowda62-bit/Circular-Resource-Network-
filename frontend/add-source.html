@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add a resource source | CRN, Circular Resource Network</title>
+  <meta name="description" content="Register a facility that has a resource available for possible reuse.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%99%BB%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/forms.css">
+</head>
+<body data-page="add-source">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <header class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="dashboard.html">Dashboard</a><span aria-hidden="true">/</span><span>Add source</span></nav>
+        <h1>Add a resource source</h1>
+        <p class="lead">Register a facility that has a resource available for possible reuse.</p>
+      </div>
+    </header>
+    <div class="container form-layout">
+      <section class="card" aria-label="Registration form">
+        <div id="form-success" class="alert alert-success" role="status" tabindex="-1" hidden>
+          <span data-icon="check" data-size="20"></span>
+          <div class="alert-body">
+            <p id="success-text"></p>
+            <div class="alert-actions">
+              <button class="btn btn-outline btn-sm" type="button" id="add-another">Add another</button>
+              <a class="btn btn-primary btn-sm" href="records.html#sources">View records</a>
+            </div>
+          </div>
+        </div>
+        <div id="form-alert"></div>
+        <form id="resource-form" novalidate>
+          <fieldset class="form-section">
+            <legend>Facility</legend>
+            <div class="form-grid">
+              <div class="field span-2">
+                <label for="facility_name">Facility name <span class="req" aria-hidden="true">*</span></label>
+                <input id="facility_name" name="facility_name" type="text" maxlength="120" autocomplete="organization" required aria-required="true" aria-describedby="facility_name-error">
+                <p class="field-error" id="facility_name-error"></p>
+              </div>
+              <div class="field span-2">
+                <label for="facility_type">Facility type <span class="req" aria-hidden="true">*</span></label>
+                <select id="facility_type" name="facility_type" required aria-required="true" aria-describedby="facility_type-error"><option value="" selected disabled>Select a facility type</option></select>
+                <p class="field-error" id="facility_type-error"></p>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="form-section">
+            <legend>Resource</legend>
+            <div class="form-grid">
+              <div class="field span-2">
+                <label for="resource">Available resource <span class="req" aria-hidden="true">*</span></label>
+                <select id="resource" name="resource" required aria-required="true" aria-describedby="resource-error"><option value="" selected disabled>Select a resource</option></select>
+                <p class="field-error" id="resource-error"></p>
+              </div>
+              <div class="field">
+                <label for="quantity">Available quantity <span class="req" aria-hidden="true">*</span></label>
+                <input id="quantity" name="quantity" type="number" inputmode="decimal" min="0.001" step="any" placeholder="For example, 250" required aria-required="true" aria-describedby="quantity-error quantity-hint">
+                <p class="field-hint" id="quantity-hint">Minimum 0.001.</p>
+                <p class="field-error" id="quantity-error"></p>
+              </div>
+              <div class="field">
+                <label for="unit">Unit <span class="req" aria-hidden="true">*</span></label>
+                <select id="unit" name="unit" required aria-required="true" aria-describedby="unit-error unit-hint"><option value="" selected disabled>Select a unit</option></select>
+                <p class="field-hint" id="unit-hint" aria-live="polite"></p>
+                <p class="field-error" id="unit-error"></p>
+              </div>
+              <div class="field span-2" id="temperature-field" hidden>
+                <label for="temperature">Temperature (°C) <span class="req" aria-hidden="true">*</span></label>
+                <input id="temperature" name="temperature" type="number" inputmode="decimal" step="any" placeholder="For example, 60" disabled aria-describedby="temperature-error temperature-hint">
+                <p class="field-hint" id="temperature-hint">Shown because the resource is Waste Heat.</p>
+                <p class="field-error" id="temperature-error"></p>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="form-section">
+            <legend>Location and notes</legend>
+            <div class="form-grid">
+              <div class="field span-2">
+                <label for="location">Location (city or area) <span class="req" aria-hidden="true">*</span></label>
+                <input id="location" name="location" type="text" maxlength="120" autocomplete="address-level2" required aria-required="true" aria-describedby="location-error">
+                <p class="field-error" id="location-error"></p>
+              </div>
+              <div class="field span-2">
+                <label for="description">Description (optional)</label>
+                <textarea id="description" name="description" maxlength="1000" aria-describedby="description-error"></textarea>
+                <p class="field-error" id="description-error"></p>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-actions">
+            <button class="btn btn-primary btn-lg" type="submit" id="submit-btn">Save resource source</button>
+            <button class="btn btn-outline btn-lg" type="reset">Clear form</button>
+          </div>
+        </form>
+      </section>
+      <aside aria-label="Guidance">
+        <section class="card side-card">
+          <h2>Before you save</h2>
+          <ul>
+            <li><span data-icon="check" data-size="18"></span><span>Fields marked * are required.</span></li>
+            <li><span data-icon="flame" data-size="18"></span><span>Temperature is only recorded for Waste Heat.</span></li>
+            <li><span data-icon="info" data-size="18"></span><span>Matching is planned for Phase 2. For now, records are stored and listed.</span></li>
+          </ul>
+        </section>
+        <section class="card side-card">
+          <h2>Other pages</h2>
+          <ul>
+            <li><span data-icon="list" data-size="18"></span><a href="records.html#sources">View and manage source records</a></li>
+            <li><span data-icon="chart" data-size="18"></span><a href="dashboard.html">Return to the dashboard</a></li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script type="module" src="js/pages/add-source.js"></script>
+</body>
+</html>

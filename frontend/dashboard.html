@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | CRN, Circular Resource Network</title>
+  <meta name="description" content="Totals, resource categories and the latest registered sources and consumers.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%99%BB%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/dashboard.css">
+</head>
+<body data-page="dashboard">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <header class="page-header">
+      <div class="container">
+        <h1>Dashboard</h1>
+        <p class="lead">What has been registered so far, by resource category.</p>
+        <div class="page-actions">
+          <a class="btn btn-primary" href="add-source.html"><span data-icon="plus" data-size="18"></span>Add source</a>
+          <a class="btn btn-accent" href="add-consumer.html"><span data-icon="plus" data-size="18"></span>Add consumer</a>
+          <a class="btn btn-outline" href="records.html"><span data-icon="list" data-size="18"></span>View records</a>
+        </div>
+      </div>
+    </header>
+    <div class="container dash">
+      <div id="dash-error"></div>
+      <section class="stat-strip" aria-label="Totals">
+        <div class="stat"><span class="stat-icon" data-icon="flame" data-size="24"></span><div><p class="stat-label">Resource sources</p><p class="stat-value" data-stat="sources"><span class="skeleton skel-num"></span></p></div></div>
+        <div class="stat"><span class="stat-icon" data-icon="building" data-size="24"></span><div><p class="stat-label">Resource consumers</p><p class="stat-value" data-stat="consumers"><span class="skeleton skel-num"></span></p></div></div>
+        <div class="stat"><span class="stat-icon" data-icon="database" data-size="24"></span><div><p class="stat-label">Total registered resources</p><p class="stat-value" data-stat="total"><span class="skeleton skel-num"></span></p></div></div>
+      </section>
+      <section class="card" aria-labelledby="cat-title">
+        <div class="card-head"><h2 id="cat-title">Resource category overview</h2></div>
+        <div id="category-overview"><span class="skeleton skel-block"></span></div>
+      </section>
+      <div class="recent-grid">
+        <section class="card" id="recent-sources" aria-label="Recently added sources"><span class="skeleton skel-block"></span></section>
+        <section class="card" id="recent-consumers" aria-label="Recently added consumers"><span class="skeleton skel-block"></span></section>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script type="module" src="js/pages/dashboard.js"></script>
+</body>
+</html>
